@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod
+spec:
+  containers:
+  - name: mypod
+    image: k8s.gcr.io/busybox
+    command: [ "/bin/sh", "-c", "ls -a /etc/foo/; cat /etc/foo/username; echo; cat /etc/foo/password"]
+    volumeMounts:
+    - name: foo
+      mountPath: "/etc/foo"
+    resources:
+      limits:
+        cpu: 1
+        memory: 200Mi
+      requests:
+        cpu: 100m
+        memory: 200Mi
+  volumes:
+  - name: foo
+    secret:
+      secretName: mysecret
+      defaultMode: 256
+  restartPolicy: Never
