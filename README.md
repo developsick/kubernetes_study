@@ -15,7 +15,7 @@
  * 계정 > CLI Command의 내용을 전부 복사
  * (windows기준)사용자폴더에 .kube디렉토리 생성후 config라는 파일 생성-내용 복사
  * kubectl config get-contexts 라면 해당 정보가 조회가 되어야함
- * macOS의 경우는 config 파일 생성후 vi로 해당내용 복사, export 해야함
+ * macOS의 경우는 cd $HOME/.kube 에 있는 config 파일을 vi로 열어 CLI Command 내용을 복사
 
 ## 4. deployment.yaml로 deployment 생성
  * deployment.yaml파일 .kube/workspace에 생성
